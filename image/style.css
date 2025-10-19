@@ -1,0 +1,161 @@
+
+
+/* --- Bagian Umum: Tampilan Elegan --- */
+body {
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+}
+
+.banner-hero {
+  /* Atur tinggi minimum agar tampak substansial */
+  height: 100vh; 
+  /* Gunakan gambar latar belakang (ganti URL) */
+  background-image: url('image/back.png'); 
+  background-size: cover;
+  /* background-position: center; */
+  /* background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: multiply; */
+  /* Gunakan Flexbox untuk memposisikan konten di tengah */
+  position: relative;
+  overflow: hidden; /* Pastikan tidak ada yang keluar dari wadah */
+}
+
+
+.banner-content {
+  position: relative; /* Pastikan konten di atas overlay */
+  z-index: 2;
+  color: white; /* Teks putih agar kontras dengan latar belakang gelap */
+  max-width: 800px; /* Batasi lebar konten agar mudah dibaca */
+  padding: 20px;
+}
+
+.banner-hero .waktu .tanggal, .banner-hero .waktu .tempat{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 70px;
+  border-radius: 25px;
+  transition-property: all;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.banner-hero .waktu i{
+  padding-right: 20px;
+}
+
+.banner-hero .waktu .tanggal:hover{
+  background-image: linear-gradient(to right, #E7B6B0 0%, #2C5364 100%);
+  font-size: 1.2em;
+  width: 240px;
+  height: 80px;
+}
+
+.banner-hero .waktu .tempat:hover{
+  background-image: linear-gradient(to right, #2C5364 0%, #E7B6B0 100%);
+  font-size: 1.2em;
+  width: 240px;
+  height: 80px;
+}
+
+.timing{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #f8f8f8;
+  background-color: rgb(25, 28, 36);
+}
+
+
+.timing .timebox{
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+}
+
+.timing .time{
+  text-align: center;
+}
+
+
+/* Content */
+.content {
+    background-color: red; /* Konten di bawah garis miring */
+    position: relative; /* Wajib untuk memposisikan pseudo-element */
+    padding-top: 100px; /* Beri ruang agar garis miring bisa masuk */
+}
+
+/* 3. Membuat Garis Miring menggunakan Pseudo-element ::before dengan duplikat*/
+.content::before {
+
+  /* Untuk mengisi konten bidang miring harus ada */
+  content: "";
+
+  /* posisikan duplikat bidang miring */
+  position: absolute;
+  top: -55px; /* menarik bagian atas menimpa section diatasnya */
+  width: 100%;
+  height: 100px;
+
+  /* Beri warna untuk bidang miring */
+  background-color: rgb(25, 28, 36);
+
+  /* PENTING: membuat bidang duplikat menjadi miring */
+  transform: skewY(2deg);
+  transform-origin: 0 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+/* --- Bagian Responsif: Media Queries --- */
+
+/* Penyesuaian untuk Layar Kecil (misalnya, Ponsel) */
+@media (max-width: 768px) {
+  .banner-hero {
+    /* Kurangi tinggi pada perangkat mobile */
+    /* min-height: 300px;  */
+    background-position: center;
+  }
+  
+  .banner-content h1 {
+    /* Kurangi ukuran font untuk layar kecil */
+    font-size: 2em; 
+  }
+} 
+  
+
+/* Penyesuaian untuk Layar Sangat Kecil (misalnya, Ponsel Portrait) */
+@media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 1.5em; 
+  }
+  
+  .banner-content p {
+    font-size: 0.9em;
+  }
+
+  .banner-hero .waktu p{
+    font-size: 0.8em;
+  }
+
+  .timing .timebox{
+    gap: 10%
+  }
+
+  .timing h1{
+    font-size: 1em;
+  }
+
+  .timing .timebox p, .timing .timebox h2{
+    font-size: 0.9em;
+  }
+}

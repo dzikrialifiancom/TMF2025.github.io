@@ -1,0 +1,235 @@
+/* ======================================================= */
+/* 0. VARIABLE & RESET */
+/* ======================================================= */
+
+:root {
+    --color-dark: #191C24; /* Biru Tua Sangat Gelap */
+    --color-dark-fade: #1F252F; /* Biru Tua Sedikit Lebih Terang */
+    --color-accent-blue: #00C3FF; /* Biru Cerah */
+    --color-accent-purple: #6300C6; /* Ungu */
+    --font-family: 'Poppins', sans-serif; 
+    --border-radius-lg: 20px;
+}
+
+@font-face {
+    font-family: 'Aosta';
+    src: url(fonts/Aosta.ttf);
+}
+
+@font-face {
+    font-family: 'Alstoria';
+    src: url(fonts/Alstoria.ttf);
+}
+
+@font-face {
+    font-family: 'Apple';
+    src: url(fonts/AppleGaramond.ttf);
+}
+
+p{
+    font-family: Apple;
+}
+
+body {
+    background-color: var(--color-dark);
+    font-family: var(--font-family);
+    scroll-behavior: smooth;
+    color: #E0E0E0;
+    /* Font yang bagus untuk tema gelap: Google Fonts Poppins atau Inter */
+}
+
+.bg-dark-custom { background-color: var(--color-dark) !important; }
+.bg-dark-fade { background-color: var(--color-dark-fade) !important; }
+.text-muted-light { color: rgba(255, 255, 255, 0.6) !important; }
+.max-w-700 { max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* ======================================================= */
+/* 1. NAVBAR (GLASS EFFECT) */
+/* ======================================================= */
+
+#main-navbar {
+    font-family: Alstoria;
+    background-color: rgba(25, 28, 36, 0.9); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px); 
+    
+    border-bottom-left-radius: var(--border-radius-lg); 
+    border-bottom-right-radius: var(--border-radius-lg); 
+    border-bottom: none; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+    transition: all 0.3s ease;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#main-navbar.scrolled {
+    background-color: rgba(25, 28, 36, 0.98); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+#main-navbar .nav-link {
+    color: #E0E0E0 !important;
+    font-weight: 500;
+}
+
+#main-navbar .nav-item{
+    color: #f8f8f8;
+  background: none;
+  border-radius: 50px;
+  border: none;
+  padding: 5px 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 16px rgba(0, 0, 0,.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#main-navbar .nav-item:hover{
+    color: #f8f8f8;
+    background: #6c63ff;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 20px rgba(108, 99, 255, 0.3);
+}
+
+
+/* ======================================================= */
+/* 2. BANNER HERO & COUNTDOWN */
+/* ======================================================= */
+
+.banner {
+    height: 100vh;
+    /* Gradasi Biru Tua-Ungu-Merah Muda pada Latar Belakang Gambar Panggung */
+    background: url('image/back.png');
+    background-size: cover;
+    background-blend-mode: multiply; 
+}
+
+/* Teks Judul dengan Gradasi (Biru ke Ungu) */
+.banner h1{
+    font-family: Aosta;
+  font-size: 300px;
+  text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
+  text-transform: uppercase;
+  font-size: 50px;
+  background: linear-gradient(to right, rgb(219, 100, 100),rgb(125, 199, 233),rgb(125, 199, 233),rgb(219, 100, 100));
+  background-size: 200%;
+  text-shadow: 0 0 50px #2831a7, 0 0 50px #0081bc;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+
+.banner p{
+    font-family: Alstoria;
+    font-size: 25px;
+}
+
+/* Countdown Style */
+.countdown-item span {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    display: block;
+    color: var(--color-accent-blue);
+    text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
+}
+
+/* About */
+#about h2{
+    text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
+}
+
+#about .lead{
+    text-align: justify;
+}
+
+
+.section-counting h1, .section-counting p{
+    text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
+}
+
+/* ======================================================= */
+/* 3. CARD PROFIL PENAMPIL & MODAL (REVISI) */
+/* ======================================================= */
+
+#performers h2, #performers h3{
+    text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
+    font-family: Alstoria;
+}
+
+#performers .card-cover{
+    background-size: cover;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5));
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#performers .card-cover .modal-content{
+    background-color: #1F252F;
+    box-shadow: 5px 5px 30px rgba(108, 99, 255, 0.3);
+}
+
+
+/* ======================================================= */
+/* 4. VENUE */
+/* ======================================================= */
+
+#venue h2{
+    font-family: Alstoria;
+    text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
+}
+
+
+
+/* ======================================================= */
+/* 4. SECTION KOMENTAR */
+/* ======================================================= */
+
+#comments h2{
+    font-family: Alstoria;
+}
+
+.comment-box {
+    background-color: var(--color-dark-fade);
+    padding: 2rem;
+    border-radius: var(--border-radius-lg);
+    font-family: Apple;
+}
+
+.comment-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--color-accent-blue);
+}
+
+.form-control {
+    background-color: var(--color-dark);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+.form-control:focus {
+    background-color: var(--color-dark);
+    color: white;
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 0 0.25rem rgba(0, 195, 255, 0.25);
+}
+
+/* ======================================================= */
+/* 5. FOOTER */
+/* ======================================================= */
+
+footer {
+    background-color: var(--color-dark-fade);
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
