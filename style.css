@@ -107,7 +107,6 @@ body {
 .banner h1{
     font-family: Aosta;
   font-size: 300px;
-  text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
   text-transform: uppercase;
   font-size: 50px;
   background: linear-gradient(to right, rgb(219, 100, 100),rgb(125, 199, 233),rgb(125, 199, 233),rgb(219, 100, 100));
@@ -128,6 +127,23 @@ body {
 .banner p{
     font-family: Alstoria;
     font-size: 25px;
+    animation: typing 2s steps(28), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: 28ch;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
 }
 
 /* Countdown Style */
@@ -193,6 +209,7 @@ body {
 
 #comments h2{
     font-family: Alstoria;
+    text-shadow: 0 0 20px #2831a7, 0 0 40px #0081bc;
 }
 
 .comment-box {
