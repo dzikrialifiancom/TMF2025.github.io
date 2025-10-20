@@ -179,11 +179,17 @@ body {
     font-family: Alstoria;
 }
 
-#performers .card-cover{
+#performers .card{
     background-size: cover;
     background-image: linear-gradient(to top, rgba(0, 0, 0, 1.5), rgba(0, 0, 0, 0.5));
     background-position: center;
     background-repeat: no-repeat;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#performers .card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 195, 255, 0.4);
 }
 
 #performers .card-cover .modal-content{
