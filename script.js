@@ -121,7 +121,7 @@ const commentList = document.getElementById('comment-list');
 function loadCommentsFromSheet() {
     commentList.innerHTML = '<p class="text-muted-light">Loading comments from Sheet...</p>'; 
 
-    fetch(SPREADSHEET_API_URL)
+    fetch('https://script.google.com/macros/s/AKfycbzuD1q-qVz1GB4VgQsYRVnOx1IjnB_5SCj6wEfP35jzaNebvKTrvBSWQSOz3uem798K/exec')
         .then(response => {
             // Karena respons Apps Script mungkin bukan JSON murni, kita coba tangani
             return response.text().then(text => {
@@ -177,7 +177,7 @@ if (commentForm) {
 
         if (name && message) {
             
-            fetch(SPREADSHEET_API_URL, {
+            fetch('https://script.google.com/macros/s/AKfycbzuD1q-qVz1GB4VgQsYRVnOx1IjnB_5SCj6wEfP35jzaNebvKTrvBSWQSOz3uem798K/exec', {
                 method: 'POST',
                 // Mode 'no-cors' seringkali diperlukan untuk Apps Script POST requests. 
                 // Ini berarti kita tidak bisa memproses respons sukses secara langsung.
@@ -201,6 +201,7 @@ if (commentForm) {
             });
         }
     });
+    loadCommentsFromSheet();
 }
 
 // Panggil fungsi muat komentar saat DOM selesai dimuat
